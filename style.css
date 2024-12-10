@@ -129,12 +129,86 @@ aside p {
 }
 /* MENU
 ------------------------------- */
-.item a {
-    color: #432;
-}
-.item a:hover {
-    color: #0bd;
-}
+/* アイテム全体のレイアウト */
+.item {
+    background-color: #f8f8f8; 
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 影を追加 */
+    padding: 20px; 
+    margin-bottom: 10px; 
+    overflow: hidden; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+  }
+  
+  .item img {
+    width: 100%; 
+    max-width: 300px; 
+    border-radius: 8px; 
+    object-fit: cover; 
+    margin-bottom: 20px;
+  }
+  
+  .item a {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #333333; 
+    text-decoration: none; 
+    display: block; 
+    margin-top: 10px;
+    transition: color 0.3s ease; 
+  }
+  
+  .item p {
+    font-size: 16px; 
+    line-height: 1.6; 
+    color: #333; 
+  }
+  
+  .item p br {
+    margin-bottom: 5px;
+  }
+  
+  .item a.button {
+    display: inline-block; 
+    padding: 10px 20px; 
+    color: #000; 
+    text-align: center; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    margin-top: 15px;
+  }
+  
+  /* セクションのタイトル */
+  .item p strong {
+    display: block; 
+    font-size: 18px; 
+    font-weight: bold; 
+    margin-top: 5px;
+    color: #444444;
+  }
+  
+  .item p span {
+    display: block; 
+    color: #000;
+    font-size: 18px; 
+    font-weight: bold; 
+    margin-top: 5px; 
+    /*border-radius: 5px;*/
+  }
+  
+  /* 登山ルートのリスト */
+  .item p ul {
+    padding-left: 20px; 
+    list-style-type: disc; 
+  }
+  
+  .item p li {
+    margin-bottom: 8px; 
+  }
+  
 /* フッター
 ------------------------------- */
 footer {
@@ -146,3 +220,19 @@ footer p {
     color: #fff;
     font-size: 0.875rem;
 }
+  /* スマホ対応 */
+  @media (max-width: 800px) {
+    .item {
+      flex-direction: column; 
+      align-items: center;
+    }
+  
+    .item img {
+      width: 100%; 
+      max-width: 100%; 
+    }
+  
+    .item a {
+      font-size: 20px; 
+    }
+  }
